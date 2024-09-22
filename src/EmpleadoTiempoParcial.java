@@ -1,7 +1,8 @@
 import java.io.Serializable;
+import java.math.*;
 
 public class EmpleadoTiempoParcial extends Empleado implements IEmpleado {
-    public final double PORCENTAJEINCENTIVO = .3;
+    public final double PORCENTAJEINCENTIVO = .03;
     private int horasPorSemana;
 
     public EmpleadoTiempoParcial(){
@@ -27,7 +28,7 @@ public class EmpleadoTiempoParcial extends Empleado implements IEmpleado {
 
     @Override
     public double calcularIncentivo() {
-        return getSalario() * PORCENTAJEINCENTIVO;
+        return Math.round((getSalario() * PORCENTAJEINCENTIVO) * 100.0) / 100.0;
     }
 
     @Override

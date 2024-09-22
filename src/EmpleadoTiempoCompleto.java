@@ -1,13 +1,14 @@
-import java.io.Serializable;
-
-public class EmpleadoTiempoCompeto  extends Empleado implements IEmpleado{
+public class EmpleadoTiempoCompleto extends Empleado implements IEmpleado{
     private int horasTrabajadas;
-    public final double PORCENTAJEINCENTIVO = .5;
 
-    public EmpleadoTiempoCompeto(){
+    //Porcentaje con el que se calcula el incentivo
+    public final double INCENTIVO = .05;
+
+    public EmpleadoTiempoCompleto(){
 
     }
-    public EmpleadoTiempoCompeto(String nombre, int ID, double salario,  int horasTrabajadas){
+
+    public EmpleadoTiempoCompleto(String nombre, int ID, double salario, int horasTrabajadas){
         super(nombre, ID, salario);
         this.horasTrabajadas = horasTrabajadas;
     }
@@ -20,14 +21,16 @@ public class EmpleadoTiempoCompeto  extends Empleado implements IEmpleado{
         this.horasTrabajadas = horasTrabajadas;
     }
 
+    //Para calcular el salario se dividen las horas entre 8 para obtener los días y de ahí entre 5 suponiendo que
+    //trabaja 5 días a la semana, eso por el salario base
     @Override
     public double calcularSalario() {
-        return getHorasTrabajadas() * getSalario();
+        return ((getHorasTrabajadas()/8)/5)* getSalario();
     }
 
     @Override
     public double calcularIncentivo() {
-        return getSalario() * PORCENTAJEINCENTIVO;
+        return getSalario() * INCENTIVO;
 
     }
 
