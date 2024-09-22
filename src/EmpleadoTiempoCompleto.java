@@ -36,6 +36,6 @@ public class EmpleadoTiempoCompleto extends Empleado implements IEmpleado{
 
     @Override
     public String toString() {
-        return "Nombre del empleado: " + getNombre() + "\nSalario Mensual: " + calcularSalario() + "\nIncentivo de: " + calcularIncentivo();
+        return "Nombre del empleado: " + getNombre() + "\nSalario Mensual: $" + calcularSalario() + "\nIncentivo de: $" + calcularIncentivo();
     }
 }
