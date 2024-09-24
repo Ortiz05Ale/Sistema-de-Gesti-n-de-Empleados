@@ -22,15 +22,15 @@ public class EmpleadoTiempoCompleto extends Empleado implements IEmpleado{
     }
 
     //Para calcular el salario se dividen las horas entre 8 para obtener los días y de ahí entre 5 suponiendo que
-    //trabaja 5 días a la semana, eso por el salario base
+    //trabaja 5 días a la semana, eso por el salario base paara obtener el salario mensual
     @Override
     public double calcularSalario() {
-        return ((getHorasTrabajadas()/8)/5)* getSalario();
+        return (((double) getHorasTrabajadas()/8)/5)* getSalario();
     }
 
     @Override
     public double calcularIncentivo() {
-        return getSalario() * INCENTIVO;
+        return calcularSalario() * INCENTIVO;
 
     }
 

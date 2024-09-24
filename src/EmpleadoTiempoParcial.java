@@ -25,7 +25,7 @@ public class EmpleadoTiempoParcial extends Empleado implements IEmpleado {
 
     @Override
     public double calcularIncentivo() {
-        return Math.round((getSalario() * INCENTIVO) * 100.0) / 100.0;
+        return Math.round((calcularSalario() * INCENTIVO) * 100.0) / 100.0;
     }
 
     @Override

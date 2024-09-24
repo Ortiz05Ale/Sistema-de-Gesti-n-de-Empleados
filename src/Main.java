@@ -4,8 +4,8 @@ public class Main {
         EmpleadoTiempoCompleto empleado4 = new EmpleadoTiempoCompleto();
         empleado4.setNombre("Paty");
         empleado4.setID(102);
-        empleado4.setSalario(150);
-        empleado4.setHorasTrabajadas(200);
+        empleado4.setSalario(2000);
+        empleado4.setHorasTrabajadas(220);
 
 
         EmpleadoTiempoParcial empleado2 = new EmpleadoTiempoParcial("Luis" , 201, 220, 15);
